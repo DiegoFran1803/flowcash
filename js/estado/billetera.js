@@ -14,6 +14,8 @@ $('.btn-billetera').each(i => {
             usuario.billetera = billetera;
             guardarDatos('usuario', usuario);
             $('.billetera').text(usuario.billetera);
+
+            cargarSonido('./audio/dinero.mp3');
         }
 
         monto.val('');
@@ -27,4 +29,6 @@ $('.btn-flujo').click(() => {
     usuario.billetera = billetera;
     guardarDatos('usuario', usuario);
     $('.billetera').text(usuario.billetera);
+
+    cargarSonido('./audio/dinero.mp3');
 });
