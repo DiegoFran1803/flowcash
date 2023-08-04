@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="icon" type="image/png" href="./img/moneda.png" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.1/dist/cosmo/bootstrap.min.css">
+    <style>
+        td {
+            min-width: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-dark bg-dark fixed-top" style="height: 60px;">
+        <div class="container">
+
+            <div class="d-flex align-items-center w-50">
+                <!--Ficha-->
+                <img class="rounded-circle ficha me-1" style="width:38px; height: 38px;">
+                <div class="progress w-50" role="progressbar" aria-label="Progreso" aria-valuenow="0" aria-valuemin="0"
+                    aria-valuemax="100" style="height: 16px;">
+                    <div class="progress-bar bg-primary progreso"></div>
+                </div>
+            </div>
+
+            <div class="text-center float-end text-white">
+                <i class="fa-solid fa-wallet fa-lg me-1"></i>
+                <small>S/. <span class="billetera"></span></small>
+            </div>
+        </div>
+    </nav>
+
+    <main style="margin-bottom: 50px; margin-top: 60px;">
+        <div class="container py-4">
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="text-center"><i class="fa-solid fa-hand-holding-dollar me-1"></i> <b>Tu Patrimonio</b>
+                    </h2>
+                    <p class="fs-1 text-center mb-0">S/. <span class="patrimonio"></span></p>
+                </div>
+            </div>
+
+            <button class="btn btn-info w-100 mt-2" data-bs-toggle="modal" data-bs-target="#comprarActivosModal">Comprar
+                Activo</button>
+            <button class="btn btn-warning w-100 mt-2" data-bs-toggle="modal"
+                data-bs-target="#realizarPrestamoModal">Realizar Prestamo</button>
+
+            <nav class="mt-5">
+                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                    <button class="nav-link w-50 text-info active" id="nav-activos-tab" data-bs-toggle="tab"
+                        data-bs-target="#nav-activos" type="button" role="tab" aria-controls="nav-activos"
+                        aria-selected="true">Tus Activos</button>
+                    <button class="nav-link w-50 text-warning" id="nav-pasivos-tab" data-bs-toggle="tab"
+                        data-bs-target="#nav-pasivos" type="button" role="tab" aria-controls="nav-pasivos"
+                        aria-selected="false">Tus Pasivos</button>
+                </div>
+            </nav>
+            <div class="tab-content" id="nav-tabContent">
+                <div class="tab-pane fade show active" id="nav-activos" role="tabpanel"
+                    aria-labelledby="nav-activos-tab" tabindex="0">
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr class="table-dark">
+                                    <th scope="col"><b>Descripcion</b></th>
+                                    <th scope="col"><b>Cantidad</b></th>
+                                    <th scope="col"><b>Costo</b></th>
+                                    <th scope="col"><b>Entrada</b></th>
+                                    <th scope="col"><b>Precio</b></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="acciones">
+                                    <td class="bg-primary text-white text-center" colspan="5"><b>Acciones</b></td>
+                                </tr>
+                                <tr class="sin-acciones">
+                                    <td colspan="5">No has comprado acciones</td>
+                                </tr>
+                                <tr class="propiedades">
+                                    <td class="bg-primary text-white text-center" colspan="5"><b>Propiedades</b></td>
+                                </tr>
+                                <tr class="sin-propiedades">
+                                    <td colspan="5">No has comprado propiedades</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr class="table-dark">
+                                    <td><b>TOTAL</b></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><b>S/. <span class="total-activos"></span></b></td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="nav-pasivos" role="tabpanel" aria-labelledby="nav-pasivos-tab"
+                    tabindex="0">
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr class="table-dark">
+                                    <th scope="col"><b>Descripcion</b></th>
+                                    <th scope="col"><b>Monto</b></th>
+                                </tr>
+                            </thead>
+                            <tbody class="deudas">
+                                <tr class="hipotecas">
+                                    <td class="bg-primary text-white text-center" colspan="2"><b>Hipotecas</b></td>
+                                </tr>
+                                <tr class="sin-hipotecas">
+                                    <td colspan="2">No has comprado propiedades</td>
+                                </tr>
+                                <tr class="prestamos">
+                                    <td class="bg-primary text-white text-center" colspan="2"><b>Prestamos</b></td>
+                                </tr>
+                                <tr class="sin-prestamos">
+                                    <td colspan="2">No has realizado ningun prestamo</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr class="table-dark">
+                                    <td scope="col"><b>TOTAL</b></td>
+                                    <td scope="col"><b>S/. <span class="total-pasivos"></span></b></td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <nav class="navbar navbar-dark bg-dark fixed-bottom" style="height: 50px;">
+        <div class="container">
+            <div class="d-flex justify-content-around w-100">
+                <a href="./home.html"><i class="fa-solid fa-house fa-xl text-white"></i></a>
+                <a href="./estado.html"><i class="fa-solid fa-money-bill-transfer fa-xl text-white"></i></a>
+                <span><i class="fa-solid fa-file-invoice-dollar fa-xl text-white"></i></span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="modals"></div>
+
+    <script src="https://kit.fontawesome.com/f3dac0d917.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="./js/modals/render.js"></script>
+    <script src="./js/modals/modals.js"></script>
+
+    <script src="./js/herramientas.js"></script>
+    <script src="./js/finanzas.js"></script>
+
+    <script src="./js/balance/balance.js"></script>
+    <script src="./js/balance/vender.js"></script>
+    <script src="./js/balance/render.js"></script>
+    <script src="./js/balance/agregar.js"></script>
+</body>
+
+</html>
