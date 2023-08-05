@@ -127,11 +127,11 @@ let plantillaModals = `
                         </div>
                         <div class="mb-3">
                             <label for="cantidadAccion" class="form-label"><b>Cantidad:</b></label>
-                            <input type="text" class="form-control" id="cantidadAccion" placeholder="Cantidad">
+                            <input type="number" class="form-control" id="cantidadAccion" placeholder="Cantidad">
                         </div>
                         <div class="mb-3">
                             <label for="costoAccion" class="form-label"><b>Costo/Unidad:</b></label>
-                            <input type="text" class="form-control" id="costoAccion" placeholder="Costo/unidad">
+                            <input type="number" class="form-control" id="costoAccion" placeholder="Costo/unidad">
                         </div>
                         <div class="modal-footer justify-content-center">
                             <button type="button" class="btn btn-secondary"
@@ -149,16 +149,16 @@ let plantillaModals = `
                         </div>
                         <div class="mb-3">
                             <label for="entradaPropiedad" class="form-label"><b>Pago Inicial o Entrada:</b></label>
-                            <input type="text" class="form-control" id="entradaPropiedad"
+                            <input type="number" class="form-control" id="entradaPropiedad"
                                 placeholder="Pago inicial o entrada">
                         </div>
                         <div class="mb-3">
                             <label for="hipotecaPropiedad" class="form-label"><b>Hipoteca:</b></label>
-                            <input type="text" class="form-control" id="hipotecaPropiedad" placeholder="Hipoteca">
+                            <input type="number" class="form-control" id="hipotecaPropiedad" placeholder="Hipoteca">
                         </div>
                         <div>
                             <label for="ingresoPropiedad" class="form-label"><b>Ingreso Pasivo:</b></label>
-                            <input type="text" class="form-control" id="ingresoPropiedad"
+                            <input type="number" class="form-control" id="ingresoPropiedad"
                                 placeholder="Ingreso pasivo">
                         </div>
                         <div class="modal-footer justify-content-center">
@@ -191,7 +191,7 @@ let plantillaModals = `
                 </div>
                 <div class="mb-4">
                     <label for="montoPrestamo" class="form-label"><b>Monto:</b></label>
-                    <input type="text" class="form-control" id="montoPrestamo" placeholder="Monto">
+                    <input type="number" class="form-control" id="montoPrestamo" placeholder="Monto">
                 </div>
                 <button class="btn btn-sm btn-primary w-100 mb-2" type="button" data-bs-toggle="collapse"
                     data-bs-target="#collapseIntereses" aria-expanded="false" aria-controls="collapseIntereses">
@@ -201,7 +201,7 @@ let plantillaModals = `
                     <div class="collapse collapse-horizontal" id="collapseIntereses">
                         <div>
                             <label for="interesPrestamo" class="form-label"><b>Interes:</b></label>
-                            <input type="text" class="form-control" id="interesPrestamo" placeholder="Interes">
+                            <input type="number" class="form-control" id="interesPrestamo" placeholder="Interes">
                         </div>
                     </div>
                 </div>
@@ -228,17 +228,26 @@ let plantillaModals = `
             <div class="modal-body">
                 <div class="mb-3">
                     <label for="ventaAccion" class="form-label"><b>Precio de Venta por Accion:</b></label>
-                    <input type="text" class="form-control" id="ventaAccion"
+                    <input type="number" class="form-control" id="ventaAccion"
                         placeholder="Precio de venta por accion">
                 </div>
 
                 <label class="form-label"><b>Cambiar Cantidad de Acciones:</b></label>
-                <div class="d-flex justify-content-center">
-                    <button class="btn btn-sm btn-outline-primary w-100 me-1 btn-duplicar"
-                        data-bs-dismiss="modal">Duplicar</button>
-                    <button class="btn btn-sm btn-outline-primary w-100 ms-1 btn-demediar"
-                        data-bs-dismiss="modal">Demediar</button>
+                <button class="btn btn-sm btn-primary w-100 mb-2" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseCambioCantidad" aria-expanded="false" aria-controls="collapseCambioCantidad">
+                    Cambiar cantidad
+                </button>
+                <div>
+                <div class="collapse collapse-horizontal" id="collapseCambioCantidad">
+                    <div class="d-flex justify-content-center">
+                        <button class="btn btn-sm btn-outline-primary w-100 me-1 btn-duplicar"
+                            data-bs-dismiss="modal">Duplicar</button>
+                        <button class="btn btn-sm btn-outline-primary w-100 ms-1 btn-demediar"
+                            data-bs-dismiss="modal">Demediar</button>
+                    </div>
                 </div>
+            </div>
+
             </div>
             <div class="modal-footer justify-content-center">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
@@ -262,7 +271,7 @@ let plantillaModals = `
             <div class="modal-body">
                 <div class="mb-3">
                     <label for="ventaPropiedad" class="form-label"><b>Precio de Venta:</b></label>
-                    <input type="text" class="form-control" id="ventaPropiedad" placeholder="Precio de venta">
+                    <input type="number" class="form-control" id="ventaPropiedad" placeholder="Precio de venta">
                 </div>
             </div>
             <div class="modal-footer justify-content-center">
